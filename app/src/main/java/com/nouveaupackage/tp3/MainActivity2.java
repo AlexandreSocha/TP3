@@ -30,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(DialogInterface d, int i) {
                 d.dismiss();
                 Intent intent = new Intent();
-                intent.putExtra("deletedUE", value);
+                intent.putExtra("UEtoDelete", value);
                 setResult(RESULT_OK, intent);
                 finish();
             }

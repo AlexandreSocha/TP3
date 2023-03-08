@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         result -> {
             if (result.getResultCode() == Activity.RESULT_OK) {
                 Intent data = result.getData();
-                afficherText("t'es con");
-                String deletedUE = data.getStringExtra("deletedUE");
+                String deletedUE = data.getStringExtra("UEtoDelete");
                 listeUE.remove(deletedUE);
                 myAdapter.notifyDataSetChanged();
             }
@@ -73,10 +72,7 @@ public class MainActivity extends AppCompatActivity {
         mEditText = findViewById(R.id.editTextAjout);
         String txt = mEditText.getText().toString();
         this.listeUE.add(0, txt);
+        mEditText.getText().clear();
         myAdapter.notifyDataSetChanged();
-    }
-
-    public void afficherText(String val){
-        Toast.makeText(this, val, Toast.LENGTH_LONG).show();
     }
 }
